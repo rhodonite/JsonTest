@@ -74,8 +74,7 @@ public class StartJson {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                     String line;
                     int i = 0;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        publishProgress((int) ((i / (float) 720) * 10));
+                    while ((line = bufferedReader.readLine()) != null) {                       
                         result += line;
                         i++;
                     }
