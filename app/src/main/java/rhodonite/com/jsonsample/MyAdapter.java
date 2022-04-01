@@ -59,6 +59,7 @@ public class MyAdapter extends BaseAdapter {
         ImageView iv = (ImageView) vi.findViewById(R.id.icon);
         TextView nickName = (TextView) vi.findViewById(R.id.nickName);
         nickName.setText(mListModel.get(position).getName());
+        iv.setImageResource(0);
         TagFlowLayout mFlowLayout = (TagFlowLayout) vi.findViewById(R.id.id_flowlayout);
 
 
