@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.squareup.picasso.Picasso;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -59,7 +60,7 @@ public class MyAdapter extends BaseAdapter {
         ImageView iv = (ImageView) vi.findViewById(R.id.icon);
         TextView nickName = (TextView) vi.findViewById(R.id.nickName);
         nickName.setText(mListModel.get(position).getName());
-        iv.setImageResource(0);
+       // iv.setImageResource(0);
         TagFlowLayout mFlowLayout = (TagFlowLayout) vi.findViewById(R.id.id_flowlayout);
 
 
@@ -73,13 +74,12 @@ public class MyAdapter extends BaseAdapter {
             }
 
         });
-
-        new DownloadImageTask(iv)
-                .execute(mListModel.get(position).getUrl());
-
+      /*  new DownloadImageTask(iv)
+                .execute(mListModel.get(position).getUrl());*/
+        Picasso.with(mContext).load(mListModel.get(position).getUrl()).into(iv);
         return vi;
     }
-
+/*
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
@@ -105,5 +105,5 @@ public class MyAdapter extends BaseAdapter {
         }
     }
 
-
+*/
 }
